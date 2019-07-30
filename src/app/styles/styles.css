@@ -1,0 +1,6 @@
+.hideElement {
+    border-bottom: 1px dashed lightblue;
+    cursor: pointer;
+    padding-bottom: 10px;
+    width: auto;
+}
