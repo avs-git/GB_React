@@ -6,10 +6,11 @@ export default class Comment extends Component {
         return (
             <div className="card border-secondary mb-3">
                 <div className="card-header">
-                    {this.props.name}
+                    {this.props.name} <span className="text-secondary">(by {this.props.email})</span>
                 </div>
                 <div className="card-body text-secondary">
-                    <p>{this.props.body}</p>
+                    < p> {this.props.body}
+                    </p>
                 </div>
             </div>
         )

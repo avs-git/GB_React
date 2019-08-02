@@ -21,14 +21,17 @@ export default class PostList extends Component {
 
     return (
       <div>
-        <h1>Посты</h1>
+        <h4>Посты</h4>
         {posts}
       </div>
     )
   }
 
   componentDidMount() {
-    axios.get('https://jsonplaceholder.typicode.com/posts').then(response => {
+    let urlRequest = this.props.userID ? 'http://jsonplaceholder.typicode.com/posts?userId=' +
+        this.props.userID : 'http://jsonplaceholder.typicode.com/posts';
+
+    axios.get(urlRequest).then(response => {
       this.setState({ posts: response.data })
     })
   }

@@ -1,38 +1,42 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import axios from 'axios';
 import Comment from './Comment';
 
 export default class CommentsList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      comments: []
-    }
-  }
-
-  render() {
-    if (!this.state.comments) {
-      return null;
+    constructor(props) {
+        super(props);
+        this.state = {
+            comments: []
+        }
     }
 
-    const comments = this.state.comments.map(comment => {
-      return <Comment key={comment.id} {...comment} />
-    });
+    render() {
+        if (!this.state.comments) {
+            return null;
+        }
 
-    return (
-      <div>
-        <h4>Комментарии к посту</h4>
-        {comments}
-      </div>
-    );
-  }
+        const comments = this.state.comments.map(comment => {
+            return <Comment key={comment.id} {...comment} />
+        });
 
-  componentDidMount() {
-    console.log(this.props.postId);
-    axios.get('http://jsonplaceholder.typicode.com/comments?postId='+this.props.postId).then(response => {
-      this.setState({ comments: response.data })
-    });
+        return (
+            <div>
+                <h4>Комментарии к посту</h4>
+                {comments}
+            </div>
+        );
+    }
 
-    console.log(this.state.comments);
-  }
+    componentDidMount() {
+
+        let urlRequest = 'http://jsonplaceholder.typicode.com/comments';
+
+        if (this.props.postId) {
+            urlRequest = 'http://jsonplaceholder.typicode.com/comments?postId=' + this.props.postId
+        }
+        axios.get(urlRequest).then(response => {
+            this.setState({comments: response.data})
+        });
+
+    }
 }
