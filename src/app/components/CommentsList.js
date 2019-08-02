@@ -21,7 +21,7 @@ export default class CommentsList extends Component {
 
         return (
             <div>
-                <h4>Комментарии к посту</h4>
+                <h4>Комментарии</h4>
                 {comments}
             </div>
         );

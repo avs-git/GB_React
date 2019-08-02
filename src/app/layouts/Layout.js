@@ -25,6 +25,9 @@ export default class Layout extends React.Component {
                     <MenuItem href="/posts" active={this.isActive('/posts')}>
                         Блог
                     </MenuItem>
+                    <MenuItem href="/comments" active={this.isActive('/comments')}>
+                        Комментарии
+                    </MenuItem>
                 </Menu>
                 <div className="container">
                     <div className="row">
