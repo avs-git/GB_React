@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import UserProfile from '../components/User';
 import PostList from '../components/PostList';
-import CommentsList from '../components/CommentsList';
 
 export default class User extends Component {
   constructor(props) {

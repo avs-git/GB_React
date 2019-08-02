@@ -9,6 +9,7 @@ import Users from './app/pages/Users';
 import User from './app/pages/User';
 import Posts from './app/pages/Posts';
 import Post from './app/pages/Post';
+import Comment from './app/pages/Comment';
 import PageNotFound from './app/pages/PageNotFound';
 
 ReactDOM.render(
@@ -21,6 +22,10 @@ ReactDOM.render(
             <Route path="posts" component={Posts}>
                 <Route path=":postID" component={Post}/>
             </Route>
+            <Route path="comments" component={Posts}>
+                <Route path=":commentID" component={Comment}/>
+            </Route>
+
             <Route path="*" component={PageNotFound}/>
         </Route>
     </Router>,
