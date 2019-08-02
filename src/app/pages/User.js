@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import UserProfile from '../components/User';
+import PostList from '../components/PostList';
 
 export default class User extends Component {
   constructor(props) {
@@ -11,9 +12,11 @@ export default class User extends Component {
   }
 
   render() {
+
     return (
       <div>
         {this.state.user && <UserProfile  {...this.state.user} />}
+        {<PostList  userID = {this.props.params.userId} />}
       </div>
     )
   }
