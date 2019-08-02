@@ -20,5 +20,9 @@ module.exports = {
                 use: ["style-loader", "css-loader"]
             }
         ]
+    },
+    devServer: {
+        historyApiFallback: true,
+        contentBase: path.resolve(__dirname, 'dist')
     }
 }
